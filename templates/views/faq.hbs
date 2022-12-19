@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>FAQ</title>
+    <style>
+        @import url(https://fonts.bunny.net/css?family=anek-gujarati:400,600);
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 0.8rem;
+            font-family: 'anek-gujarati', sans-serif;
+            background: #f5f5f5;
+            place-items: center;
+            min-height: 100vh;
+            display: grid;
+        }
+
+        .faq-card {
+            background: #fff;
+            width: 330px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+            padding: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .faq-card__list {
+            padding-bottom: 4em;
+            list-style-type: none;
+            width: 100%;
+        }
+
+        .faq-card__item {
+            color: #453f3a;
+            padding-block: 1em;
+            margin-inline: 1.5em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-card__button {
+            color: #2a2623;
+            display: flex;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            background: none;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 100;
+            transition: color 1000ms linear, font-weight 100ms linear, margin-bottom 100ms linear;
+        }
+
+        .faq-card__button_active {
+            transition: color 800ms linear, font-weight 100ms linear, margin-bottom 100ms linear;
+        }
+
+        .faq-card__button_active .faq-card__icon {
+            transition: 300ms linear;
+        }
+
+        .faq-card__button_active:hover:not(:focus) {
+            color: #c76d52;
+        }
+
+        .faq-card__button_active:not(:focus)+.faq-card__desc {
+            visibility: hidden;
+            opacity: 1;
+            max-height: 0;
+        }
+
+        .faq-card__button_active:focus {
+            margin-bottom: 1em;
+            font-weight: 600;
+            color: #c76d52;
+        }
+
+        .faq-card__button_active:focus+.faq-card__desc {
+            visibility: visible;
+            opacity: 1.9;
+            max-height: 100px;
+        }
+
+        .faq-card__button_active:focus .faq-card__icon {
+            transform: rotate(360deg) scale(1.2) translateX(5px) translateY(5px) translateZ(5px) skew(5deg) skewX(5deg) skewY(5deg);
+        }
+
+        .faq-card__icon {
+            color: #c76d52;
+            font-size: 1.2rem;
+            transition: 1000ms linear;
+        }
+
+        .faq-card__desc {
+            transition: opacity 0.7s linear 0.3s, max-height 0.7s linear 0.9s, visibility 0.7s linear 1s;
+            max-inline-size: calc(100% - 13px) !important;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0.7;
+            visibility: hidden;
+            line-height: 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #453f3a;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="margin-right: 50px;">
+        <h1 style="display: block;font-size: 2.5rem;font-weight: 600;color: rgb(73, 73, 73);margin-bottom: 0.5em;margin-top: 0.5em;text-align: center;text-decoration: none;text-transform: uppercase;font-family: 'Anek Gujarati', sans-serif;border-bottom: 1px solid rgb(73, 73, 73);padding-bottom: 0.5em;padding-top: 0.5em;">FAQ</h1>
+         <a href="/" style="text-decoration: none;color: rgb(73, 73, 73);margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px; font-size: 1.5rem; font-weight: 600; text-transform: uppercase; font-family: 'Anek Gujarati', sans-serif;border-bottom: 1px solid rgb(73, 73, 73);padding-bottom: 0.5em;padding-top: 0.5em;">Home</a>
+        <a href="/about" style="text-decoration: none;color: rgb(73, 73, 73); margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px; font-size: 1.5rem; font-weight: 600; text-transform: uppercase; font-family: 'Anek Gujarati', sans-serif;border-bottom: 1px solid rgb(73, 73, 73);padding-bottom: 0.5em;padding-top: 0.5em;">About</a>
+        <a href="https://dharmpate.w3spaces.com/contact.html" style="text-decoration: none;color: rgb(73, 73, 73);margin-right: 10px;margin-left: 10px;margin-top: 10px;margin-bottom: 10px;font-size: 1.5rem;font-weight: 600;text-transform: uppercase;font-family: 'Anek Gujarati', sans-serif;border-bottom: 1px solid rgb(73, 73, 73);padding-bottom: 0.5em;padding-top: 0.5em;">Help</a>
+    </header>
+    <div>
+        <main>
+            <div class="faq-card">
+                <ul class="faq-card__list">
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">What is weather?<i
+                                class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">The day-to-day condition of the atmosphere at a place with respect to
+                            the
+                            temperature,​ humidity, rainfall and wind speed, is called the weather.</p>
+                    </li>
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">how can i get weather?<i
+                                class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">In weather section search city and click on search button then you
+                            will
+                            get weather.</p>
+                    </li>
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">What is unit of temperature in this
+                            web?<i class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">temperature unit which is used in this web is fahrenhit degree.</p>
+                    </li>
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">What is uv index?<i
+                                class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">The UV Index is a measure of the level of UV radiation.</p>
+                    </li>
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">What is humidity?<i
+                                class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">Humidity is a measure of the amount of water vapor in the air.</p>
+                    </li>
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">What is cloudcover?<i
+                                class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">Cloud cover refers to the fraction of the sky obscured by clouds on
+                            average when observed from a particular location.</p>
+                    </li>
+                    <li class="faq-card__item">
+                        <button class="faq-card__button faq-card__button_active">What is mb in pressure?<i
+                                class="faq-card__icon fa fa-caret-down" aria-hidden="true"></i></button>
+                        <p class="faq-card__desc">Millibar is a metric unit of pressure</p>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
